@@ -1,0 +1,6 @@
+node_modules
+public
+protractor.conf.js
+src/global.styled.js
+src/reportWebVitals.js
+src/setupTests.js
