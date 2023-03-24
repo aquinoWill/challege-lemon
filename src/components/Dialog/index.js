@@ -13,6 +13,10 @@ export const Dialog = () => {
 
   const [dialogOpen, setDialogOpen] = useState(isOpen)
 
+  const onClose = useCallback(() => {
+    setDialogOpen(false)
+  }, [setDialogOpen])
+
   useEffect(() => {
     const handleEscEvent = event => {
       if (event.keyCode === 27 && closeOnOverlayClick) {
@@ -25,10 +29,6 @@ export const Dialog = () => {
       window.removeEventListener('keydown', handleEscEvent)
     }
   }, [onClose, closeOnOverlayClick])
-
-  const onClose = useCallback(() => {
-    setDialogOpen(false)
-  }, [setDialogOpen])
 
   return (
     <>

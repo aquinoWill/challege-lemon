@@ -32,6 +32,7 @@ export const Card = styled.div`
 
 export const WrapperTitle = styled.div`
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -49,10 +50,11 @@ export const CloseButton = styled.button`
   margin: 0;
   padding: 0;
   border: 0;
-  background: none;
-  position: relative;
+  right: 0;
   width: 1.3em;
   height: 1.3em;
+  background: none;
+  position: absolute;
 
   &:before,
   &:after {
