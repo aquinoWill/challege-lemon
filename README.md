@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Public link - Deploy in AzureDevOps
-https://joyful-youtiao-a2ad05.netlify.app/
+https://salmon-rock-06f2b6e10.2.azurestaticapps.net
 
 ## Available Scripts
 
