@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react'
+import React, { useState, useCallback, createContext, useContext } from 'react'
 import { node, string, bool } from 'prop-types'
 import { Dialog } from 'components'
 
@@ -9,18 +9,27 @@ export const DialogProvider = ({
   isOpen,
   children,
   closeOnOverlayClick
-}) => (
-  <DialogContext.Provider value={{
-    title,
-    isOpen,
-    children,
-    closeOnOverlayClick
-  }}>
-    <Dialog>
-      { children }
-    </Dialog>
-  </DialogContext.Provider>
-)
+}) => {
+  const [hasOpen, setHasOpen] = useState(isOpen)
+
+  const onClose = useCallback(() => {
+    setHasOpen(false)
+  }, [setHasOpen])
+
+  return (
+    <DialogContext.Provider value={{
+      title,
+      onClose,
+      children,
+      isOpen: hasOpen,
+      closeOnOverlayClick
+    }}>
+      <Dialog>
+        { children }
+      </Dialog>
+    </DialogContext.Provider>
+  )
+}
 
 DialogProvider.propTypes = {
   title: string,

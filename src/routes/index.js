@@ -1,5 +1,12 @@
 import React from 'react'
-import { Home, ErrorPage } from 'pages'
+import {
+  Home,
+  SimpleDialog,
+  FullDialog,
+  BlockOverlay,
+  DialogClose,
+  ErrorPage
+} from 'pages'
 import { Layout } from 'components'
 import {
   createBrowserRouter,
@@ -14,6 +21,22 @@ const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/simple',
+        element: <SimpleDialog />
+      },
+      {
+        path: '/full',
+        element: <FullDialog />
+      },
+      {
+        path: '/block-overlay',
+        element: <BlockOverlay />
+      },
+      {
+        path: '/close',
+        element: <DialogClose />
       }
     ]
   }
