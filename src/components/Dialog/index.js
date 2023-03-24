@@ -11,28 +11,28 @@ export const Dialog = () => {
     closeOnOverlayClick
   } = useContext(DialogContext)
 
-  const [dialogOpen, setDialogOpen] = useState(isOpen)
+  const [hasOpen, setHasOpen] = useState(isOpen)
 
   const onClose = useCallback(() => {
-    setDialogOpen(false)
-  }, [setDialogOpen])
+    setHasOpen(false)
+  }, [setHasOpen])
 
   useEffect(() => {
-    const handleEscEvent = event => {
+    const handleEscCloseDialog = event => {
       if (event.keyCode === 27 && closeOnOverlayClick) {
         onClose()
       }
     }
-    window.addEventListener('keydown', handleEscEvent)
+    window.addEventListener('keydown', handleEscCloseDialog)
 
     return () => {
-      window.removeEventListener('keydown', handleEscEvent)
+      window.removeEventListener('keydown', handleEscCloseDialog)
     }
   }, [onClose, closeOnOverlayClick])
 
   return (
     <>
-      { dialogOpen && (
+      { hasOpen && (
         <Wrapper>
           <Overlay onClick={() => closeOnOverlayClick ? onClose() : null} />
           <Card>

@@ -15,7 +15,7 @@ export const Overlay = styled.div`
     inset: 0px;
     z-index: -1;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
 `
 
 export const Card = styled.div`
@@ -27,13 +27,13 @@ export const Card = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 `
 
 export const WrapperTitle = styled.div`
   width: 100%;
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -47,23 +47,24 @@ export const Title = styled.h6`
 `
 
 export const CloseButton = styled.button`
+  right: 0;
+  border: 0;
   margin: 0;
   padding: 0;
-  border: 0;
-  right: 0;
   width: 1.3em;
   height: 1.3em;
+  cursor: pointer;
   background: none;
   position: absolute;
 
   &:before,
   &:after {
     content: '';
-    position: absolute;
     left: 0;
     right: 0;
     height: 0.1em;
-    background: #000;
+    position: absolute;
+    background: #000000;
   }
 
   &:before {
@@ -78,5 +79,5 @@ export const CloseButton = styled.button`
 export const Content = styled.div`
   width: 100%;
   display: flex;
-  overflow: auto;
+  overflow-y: overlay;
 `
