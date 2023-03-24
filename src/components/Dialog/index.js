@@ -10,12 +10,8 @@ export const Dialog = () => {
     children,
     closeOnOverlayClick
   } = useContext(DialogContext)
-  
-  const [dialogOpen, setDialogOpen] = useState(isOpen)
 
-  const onClose = useCallback(() => {
-    setDialogOpen(false)
-  }, [setDialogOpen])
+  const [dialogOpen, setDialogOpen] = useState(isOpen)
 
   useEffect(() => {
     const handleEscEvent = event => {
@@ -28,7 +24,11 @@ export const Dialog = () => {
     return () => {
       window.removeEventListener('keydown', handleEscEvent)
     }
-}, [onClose, closeOnOverlayClick])
+  }, [onClose, closeOnOverlayClick])
+
+  const onClose = useCallback(() => {
+    setDialogOpen(false)
+  }, [setDialogOpen])
 
   return (
     <>
@@ -37,7 +37,7 @@ export const Dialog = () => {
           <Overlay onClick={() => closeOnOverlayClick ? onClose() : null} />
           <Card>
             <WrapperTitle>
-              <Title>{ title }</Title>
+              { title && <Title>{ title }</Title>}
               <CloseButton onClick={onClose} /> 
             </WrapperTitle>
             <Content>
