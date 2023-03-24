@@ -1,8 +1,9 @@
-import React, { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import { node, string, bool } from 'prop-types'
 import { Dialog } from 'components'
 
 export const DialogContext = createContext({})
+export const useDialogContext = () => useContext(DialogContext)
 export const DialogProvider = ({
   title,
   isOpen,

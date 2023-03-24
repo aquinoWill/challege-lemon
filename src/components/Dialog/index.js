@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useEffect, useContext } from 'react'
-import { DialogContext } from 'providers'
+import React, { useState, useCallback, useEffect } from 'react'
+import { useDialogContext  } from 'providers'
 
 import { Wrapper, Overlay, Card, WrapperTitle, Title, CloseButton, Content } from './Dialog.styled'
 
@@ -9,7 +9,7 @@ export const Dialog = () => {
     isOpen,
     children,
     closeOnOverlayClick
-  } = useContext(DialogContext)
+  } = useDialogContext()
 
   const [hasOpen, setHasOpen] = useState(isOpen)
 
@@ -33,8 +33,11 @@ export const Dialog = () => {
   return (
     <>
       { hasOpen && (
-        <Wrapper>
-          <Overlay onClick={() => closeOnOverlayClick ? onClose() : null} />
+        <Wrapper role='dialog'>
+          <Overlay
+            data-testid='overlay' 
+            onClick={() => closeOnOverlayClick ? onClose() : null}
+          />
           <Card>
             <WrapperTitle>
               { title && <Title>{ title }</Title>}
