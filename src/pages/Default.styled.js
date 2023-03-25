@@ -5,5 +5,5 @@ export const Wrapper = styled.section`
   height: 100%;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;
 `

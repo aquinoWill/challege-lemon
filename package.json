@@ -20,10 +20,9 @@
       "!src/App.js",
       "!src/reportWebVitals.js",
       "!src/index.js",
+      "!src/pages/**/*",
       "!src/**/*.styled.js",
-      "!src/assets/index.js",
       "!src/pages/index.js",
-      "!src/hooks/index.js",
       "!src/routes/index.js",
       "!src/components/index.js"
     ],

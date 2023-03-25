@@ -4,13 +4,13 @@ import { DialogProvider } from 'providers'
 
 import LemonGroup from 'assets/lemon-group.png'
 
-export const Home = () => {
+export const FullDialog = () => {
   return (
     <Wrapper>
-      <div>Contéudo Home page</div>
+      <div>Contéudo FullDialog Page</div>
       <DialogProvider
         isOpen
-        title='Dialog small text'
+        title='Dialog full text'
         closeOnOverlayClick
       >
         <div>

@@ -12,6 +12,7 @@ jest.mock('providers', () => ({
 
 const initialState = {
   isOpen: false,
+  onClose: jest.fn(),
   closeOnOverlayClick: false,
   title: 'Title',
   children: <>Content</>
@@ -25,6 +26,7 @@ describe('COMPONENT: Dialog', () => {
   it('Should render Dialog when isOpen is true', () => {
     const props = {
       isOpen: true,
+      onClose: jest.fn(),
       closeOnOverlayClick: true,
       title: 'Title Dialog',
       children: <>Content Dialog Mock</>
@@ -40,6 +42,7 @@ describe('COMPONENT: Dialog', () => {
   it('Should render without title', () => {
     const props = {
       isOpen: true,
+      onClose: jest.fn(),
       closeOnOverlayClick: true,
       children: <>Content Dialog Mock</>
     }
@@ -52,6 +55,7 @@ describe('COMPONENT: Dialog', () => {
   it('Should close Dialog when click in Button', async () => {
     const props = {
       isOpen: true,
+      onClose: jest.fn(),
       closeOnOverlayClick: true,
       children: <>Content Dialog Mock</>
     }
@@ -65,6 +69,7 @@ describe('COMPONENT: Dialog', () => {
   it('Should close Dialog when click in Overlay', async () => {
     const props = {
       isOpen: true,
+      onClose: jest.fn(),
       title: 'Title Dialog',
       closeOnOverlayClick: true,
       children: <>Content Dialog Mock</>
@@ -79,6 +84,7 @@ describe('COMPONENT: Dialog', () => {
   it('Should click in Overlay and not close Dialog', async () => {
     const props = {
       isOpen: true,
+      onClose: jest.fn(),
       title: 'Title Dialog',
       closeOnOverlayClick: false,
       children: <>Content Dialog Mock</>
@@ -93,6 +99,7 @@ describe('COMPONENT: Dialog', () => {
   it('Should close Dialog when user press Esc', async () => {
     const props = {
       isOpen: true,
+      onClose: jest.fn(),
       title: 'Title Dialog',
       closeOnOverlayClick: true,
       children: <>Content Dialog Mock</>

@@ -1,2 +1,6 @@
 export { Home } from './Home'
+export { SimpleDialog } from './SimpleDialog'
+export { FullDialog } from './FullDialog'
+export { BlockOverlay } from './BlockOverlay'
+export { DialogClose } from './DialogClose'
 export { ErrorPage } from './ErrorPage'

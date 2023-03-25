@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useDialogContext  } from 'providers'
 
 import { Wrapper, Overlay, Card, WrapperTitle, Title, CloseButton, Content } from './Dialog.styled'

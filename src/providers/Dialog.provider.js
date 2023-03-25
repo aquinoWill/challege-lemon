@@ -9,18 +9,21 @@ export const DialogProvider = ({
   isOpen,
   children,
   closeOnOverlayClick
-}) => (
-  <DialogContext.Provider value={{
-    title,
-    isOpen,
-    children,
-    closeOnOverlayClick
-  }}>
-    <Dialog>
-      { children }
-    </Dialog>
-  </DialogContext.Provider>
-)
+}) => {
+
+  return (
+    <DialogContext.Provider value={{
+      title,
+      children,
+      isOpen,
+      closeOnOverlayClick
+    }}>
+      <Dialog>
+        { children }
+      </Dialog>
+    </DialogContext.Provider>
+  )
+}
 
 DialogProvider.propTypes = {
   title: string,
