@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useDialogContext  } from 'providers'
 
 import { Wrapper, Overlay, Card, WrapperTitle, Title, CloseButton, Content } from './Dialog.styled'
@@ -7,10 +7,15 @@ export const Dialog = () => {
   const {
     title,
     isOpen,
-    onClose,
     children,
     closeOnOverlayClick
   } = useDialogContext()
+
+  const [hasOpen, setHasOpen] = useState(isOpen)
+
+  const onClose = useCallback(() => {
+    setHasOpen(false)
+  }, [setHasOpen])
 
   useEffect(() => {
     const handleEscCloseDialog = event => {
@@ -27,7 +32,7 @@ export const Dialog = () => {
 
   return (
     <>
-      { isOpen && (
+      { hasOpen && (
         <Wrapper role='dialog'>
           <Overlay
             data-testid='overlay' 
